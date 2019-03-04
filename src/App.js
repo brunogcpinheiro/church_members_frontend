@@ -1,8 +1,19 @@
 import React, { Component } from "react";
+import Header from "./components/header";
+import Sidebar from "./components/sidebar";
+import Dashboard from "./components/dashboard";
 
 class App extends Component {
 	render () {
-		return <div className="App">Hello World</div>;
+		return (
+			<div>
+				<Header />
+				<div class="wrapper">
+					<Sidebar />
+					<Dashboard />
+				</div>
+			</div>
+		);
 	}
 }
 
