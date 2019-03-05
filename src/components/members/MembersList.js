@@ -9,6 +9,10 @@ class MembersList extends Component {
 		this.props.getMembers();
 	}
 
+	handleDelete = id => {
+		this.props.deleteMember(id);
+	};
+
 	render () {
 		return (
 			<Fragment>
@@ -33,7 +37,11 @@ class MembersList extends Component {
 								<td>{member.telephone}</td>
 								<td>{member.email}</td>
 								<td>
-									<button className="btn btn-danger btn-sm">Delete</button>
+									<button
+										className="btn btn-danger btn-sm"
+										onClick={this.props.deleteMember.bind(this, member._id)}>
+										Delete
+									</button>
 								</td>
 							</tr>
 						))}
