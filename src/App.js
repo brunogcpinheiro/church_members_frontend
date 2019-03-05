@@ -1,18 +1,21 @@
-import React, { Component } from "react";
-import Header from "./components/header";
-import Sidebar from "./components/sidebar";
-import Dashboard from "./components/dashboard";
+import React, { Component, Fragment } from "react";
+import { Provider } from "react-redux";
+
+import store from "./store";
+import Header from "./components/layout/Header";
+import Dashboard from "./components/members/Dashboard";
 
 class App extends Component {
 	render () {
 		return (
-			<div>
-				<Header />
-				<div className="wrapper">
-					<Sidebar />
-					<Dashboard />
-				</div>
-			</div>
+			<Provider store={store}>
+				<Fragment>
+					<Header />
+					<div className="container">
+						<Dashboard />
+					</div>
+				</Fragment>
+			</Provider>
 		);
 	}
 }
