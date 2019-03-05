@@ -9,7 +9,7 @@ export const getMembers = () => dispatch => {
 		.then(res => {
 			dispatch({
 				type: GET_MEMBERS,
-				payload: res.data,
+				payload: res.data.docs,
 			});
 		})
 		.catch(err => console.error("GET MEMBERS", err));
