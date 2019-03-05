@@ -9,10 +9,6 @@ class MembersList extends Component {
 		this.props.getMembers();
 	}
 
-	handleDelete = id => {
-		this.props.deleteMember(id);
-	};
-
 	render () {
 		return (
 			<Fragment>
