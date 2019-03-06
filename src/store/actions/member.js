@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_MEMBERS, DELETE_MEMBER } from "./types";
+import { GET_MEMBERS, ADD_MEMBER, DELETE_MEMBER } from "./types";
 
 const api_url = "http://localhost:3001";
 
@@ -13,6 +13,18 @@ export const getMembers = () => dispatch => {
 			});
 		})
 		.catch(err => console.error("GET MEMBERS", err));
+};
+
+export const addMember = () => dispatch => {
+	axios
+		.post(`${api_url}/members`)
+		.then(res => {
+			dispatch({
+				type: ADD_MEMBER,
+				payload: res.data,
+			});
+		})
+		.catch(err => console.error("ADD MEMBER", err));
 };
 
 export const deleteMember = id => dispatch => {

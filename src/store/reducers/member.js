@@ -1,4 +1,4 @@
-import { GET_MEMBERS, DELETE_MEMBER } from "../actions/types";
+import { GET_MEMBERS, ADD_MEMBER, DELETE_MEMBER } from "../actions/types";
 
 const initialState = {
 	members: [],
@@ -10,6 +10,11 @@ export default function member (state = initialState, action) {
 			return {
 				...state,
 				members: action.payload,
+			};
+		case ADD_MEMBER:
+			return {
+				...state,
+				members: [ ...state.members, action.payload ],
 			};
 		case DELETE_MEMBER:
 			return {

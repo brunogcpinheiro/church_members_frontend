@@ -50,6 +50,8 @@ class MembersList extends Component {
 
 MembersList.propTypes = {
 	members: PropTypes.array.isRequired,
+	getMembers: PropTypes.func.isRequired,
+	deleteMember: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
