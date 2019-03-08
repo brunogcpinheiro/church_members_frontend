@@ -15,9 +15,9 @@ export const getMembers = () => dispatch => {
 		.catch(err => console.error("GET MEMBERS", err));
 };
 
-export const addMember = () => dispatch => {
+export const addMember = newMember => dispatch => {
 	axios
-		.post(`${api_url}/members`)
+		.post(`${api_url}/members`, newMember)
 		.then(res => {
 			dispatch({
 				type: ADD_MEMBER,
