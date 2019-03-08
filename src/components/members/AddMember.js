@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { TiUserAdd } from "react-icons/ti";
@@ -145,6 +146,10 @@ class AddMember extends Component {
 		);
 	}
 }
+
+AddMember.propTypes = {
+	addMember: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = dispatch =>
 	bindActionCreators(MemberActions, dispatch);
