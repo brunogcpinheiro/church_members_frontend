@@ -24,7 +24,14 @@ class AddMember extends Component {
 	};
 
 	onCloseModal = () => {
-		this.setState({ open: false });
+		this.setState({
+			open: false,
+			name: "",
+			age: "",
+			address: "",
+			telephone: "",
+			email: "",
+		});
 	};
 
 	onChange = e => {
